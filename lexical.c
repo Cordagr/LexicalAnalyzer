@@ -60,18 +60,17 @@ int lex();
 #define KW_STATIC 72 // static
 #define KW_CONST 73 // const 
 #define KW_VOLATILE 74 // volatile
-#define KW_MUTABLE 75 // mutable
-#define KW_RESTRICT 76 // restrict
-#define KW_RETURN 77 // return
-#define KW_VOID 78 // void
-#define KW_AUTO 79 // auto
-#define KW_TYPEDEF // typedef
-#define KW_ENUM // enum
-#define KW_UNION // union
-#define KW_STRUCT // struct
-#define KW_goto // goto
-#define KW_continue // continue
-#define KW_BREAK // break
+#define KW_RESTRICT 75 // restrict
+#define KW_RETURN 76 // return
+#define KW_VOID 77 // void
+#define KW_AUTO 78 // auto
+#define KW_TYPEDEF 79 // typedef
+#define KW_ENUM  80 // enum
+#define KW_UNION 81 // union
+#define KW_STRUCT 82 // struct
+#define KW_GOTO 83 // goto
+#define KW_CONTINUE 84 // continue
+#define KW_BREAK 85 // break
 
 
 /******************************************************/
@@ -132,7 +131,7 @@ nextToken = EQ_OP;
 addChar();
 break;
 default:
-addChar()
+addChar();
 nextToken = EOF;
 break;
 }
@@ -150,6 +149,80 @@ lexeme[lexLen] = 0;
 else
 printf("Error - lexeme is too long \n");
 }
+
+/****************************************************/
+/* getKeyword - a function get the next character of input and determine of
+input and determine its keyword */
+void getKeyword()
+{
+if(strcmp(lexeme,"if") == 0):
+return KW_IF;
+else if(strcmp(lexeme,"else") == 0):
+return KW_ELSE;
+else if(strcmp(lexeme,"switch") == 0):
+return KW_SWITCH;
+else if(strcmp(lexeme,"case") == 0):
+return KW_CASE;
+else if(strcmp(lexeme,"default") == 0):
+return KW_DEFAULT;
+else if(strcmp(lexeme,"while") == 0):
+return KW_WHILE;
+else if(strcmp(lexeme,"do") == 0):
+return KW_DO;
+else if(strcmp(lexeme,"for") == 0):
+return KW_FOR;
+else if(strcmp(lexeme,"int") == 0):
+return KW_INT;
+else if(strcmp(lexeme,"char") == 0):
+return KW_CHAR;
+else if(strcmp(lexeme,"float") == 0):
+return KW_FLOAT;
+else if(strcmp(lexeme,"double") == 0):
+return KW_DOUBLE; 
+else if(strcmp(lexeme,"long") == 0):
+return KW_LONG;
+else if(strcmp(lexeme,"short") == 0):
+return KW_SHORT;
+else if(strcmp(lexeme,"signed") == 0):
+return KW_SIGNED;
+else if(strcmp(lexeme,"unsigned") == 0):
+return KW_UNSIGNED;
+else if(strcmp(lexeme,"auto") == 0):
+return KW_AUTO;
+else if(strcmp(lexeme,"extern") == 0):
+return KW_EXTERN;
+else if(strcmp(lexeme,"register") == 0):
+return KW_REGISTER;
+else if(strcmp(lexeme,"static") == 0):
+return KW_CONST;
+else if(strcmp(lexeme,"const") == 0):
+return KW_CONST;
+else if(strcmp(lexeme,"volatile") == 0):
+return KW_VOLATILE;
+else if(strcmp(lexeme,"restrict") == 0):
+return KW_RESTRICT;
+else if(strcmp(lexeme,"return") == 0):
+return KW_RETURN;
+else if(strcmp(lexeme,"void") == 0):
+return KW_VOID;
+else if(strcmp(lexeme,"sizeof") == 0):
+return KW_SIZEOF;
+else if(strcmp(lexeme,"typedef") == 0):
+return KW_TYPEDEF;
+else if(strcmp(lexeme,"enum") == 0):
+return KW_ENUM;
+else if(strcmp(lexeme,"union") == 0):
+return KW_UNION;
+else if(strcmp(lexeme,"struct") == 0):
+return KW_STRUCT;
+else if(strcmp(lexeme,"goto") == 0):
+return KW_GOTO;
+else if(strcmp(lexeme,"continue") == 0):
+return KW_CONTINUE;
+else if(strcmp(lexeme,"break") == 0):
+return KW_BREAK;
+}
+
 /*****************************************************/
 /* getChar - a function to get the next character of
 input and determine its character class */
@@ -222,6 +295,3 @@ break;
 printf("Next token is: %d, Next lexeme is %s\n")
 }
 
-nextToken, lexeme);
-return nextToken;
-} /* End of function lex */
