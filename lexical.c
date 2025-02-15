@@ -32,6 +32,23 @@ int lex();
 #define EQUAL_OP 26
 #define LEFT_PAREN 27
 #define RIGHT_PAREN 28
+#define LEFT_BRACE 29
+#define RIGHT_BRACE 30
+#define LEFT_SQUARE_BRACKET 31
+#define RIGHT_SQUARE_BRACKET 32
+#define COMMA 33
+#define SEMICOLON 34
+#define COLON 35
+#define DOT 36
+#define EQUALITY_OP 37
+#define NOT_EQUAL_OP 38
+#define GREATER_THAN_OP 39
+#define LESS_THAN_OP 40
+#define GREATER_THAN_OR_EQ 41
+#define LESS_THAN_OR_EQ 42
+#define LOGICAL_AND 43
+#define PREPRO_DIRECTIVE 44
+
 
 /* 32 keywords */
 /* Keywords */
@@ -150,10 +167,12 @@ else
 printf("Error - lexeme is too long \n");
 }
 
+
+
 /****************************************************/
 /* getKeyword - a function get the next character of input and determine of
 input and determine its keyword */
-void getKeyword()
+void getKeyword(char * lexeme)
 {
 if(strcmp(lexeme,"if") == 0):
 return KW_IF;
@@ -221,7 +240,7 @@ else if(strcmp(lexeme,"continue") == 0):
 return KW_CONTINUE;
 else if(strcmp(lexeme,"break") == 0):
 return KW_BREAK;
-return IDEN;
+return IDENT
 }
 
 /*****************************************************/
@@ -295,4 +314,3 @@ break;
 } /* End of switch */
 printf("Next token is: %d, Next lexeme is %s\n")
 }
-
