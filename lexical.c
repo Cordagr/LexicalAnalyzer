@@ -221,6 +221,7 @@ else if(strcmp(lexeme,"continue") == 0):
 return KW_CONTINUE;
 else if(strcmp(lexeme,"break") == 0):
 return KW_BREAK;
+return IDEN;
 }
 
 /*****************************************************/
