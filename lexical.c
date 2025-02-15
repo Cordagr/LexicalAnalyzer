@@ -1,7 +1,3 @@
-
-Page
-1
-of 4
 /* front.c - a lexical analyzer system for simple
 arithmetic expressions */
 #include <stdio.h>
@@ -32,8 +28,10 @@ int lex();
 #define SUB_OP 22
 #define MULT_OP 23
 #define DIV_OP 24
-#define LEFT_PAREN 25
-#define RIGHT_PAREN 26
+#define MOD_OP 25
+#define EQUAL_OP 26
+#define LEFT_PAREN 27
+#define RIGHT_PAREN 28
 /******************************************************/
 /* main driver */
 int main()
@@ -82,8 +80,17 @@ case '/':
 addChar();
 nextToken = DIV_OP;
 break;
-default:
+case '%':
+nextToken = MOD_OP;
 addChar();
+nextTOKEN = MOD_OP;
+break;
+case '=':
+nextToken = EQ_OP;
+addChar();
+break;
+default:
+addChar()
 nextToken = EOF;
 break;
 }
@@ -170,7 +177,9 @@ lexeme[2] = 'F';
 lexeme[3] = 0;
 break;
 } /* End of switch */
-printf("Next token is: %d, Next lexeme is %s\n",
+printf("Next token is: %d, Next lexeme is %s\n")
+}
+
 nextToken, lexeme);
 return nextToken;
 } /* End of function lex */
