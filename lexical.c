@@ -32,6 +32,48 @@ int lex();
 #define EQUAL_OP 26
 #define LEFT_PAREN 27
 #define RIGHT_PAREN 28
+
+/* 32 keywords */
+/* Keywords */
+#define KW_IF 50       // if
+#define KW_ELSE 51     // else
+#define KW_WHILE 52    // while
+#define KW_SWITCH 53     // switch 
+#define KW_RETURN 54  // return
+#define KW_CASE 55 // case
+#define KW_DEFAULT 56 // default
+#define KW-WHILE 57 // while
+#define KW_DO 58 // do
+#define KW_FOR 59 // for
+#define KW_INT 60 // int
+#define KW_CHAR 61 // char
+#define KW_FLOAT 62 // float
+#define KW_LONG  63 // long
+#define KW_DOUBLE 64 // double
+#define KW_LONG 65 // long
+#define KW_SHORT 66 // short
+#define KW_SIGNED 67 // signed
+#define KW_UNSIGNED 68 // unsigned
+#define KW_AUTO 69 // auto
+#define KW_EXTERN 70 // extern
+#define KW_REGISTER 71 // register
+#define KW_STATIC 72 // static
+#define KW_CONST 73 // const 
+#define KW_VOLATILE 74 // volatile
+#define KW_MUTABLE 75 // mutable
+#define KW_RESTRICT 76 // restrict
+#define KW_RETURN 77 // return
+#define KW_VOID 78 // void
+#define KW_AUTO 79 // auto
+#define KW_TYPEDEF // typedef
+#define KW_ENUM // enum
+#define KW_UNION // union
+#define KW_STRUCT // struct
+#define KW_goto // goto
+#define KW_continue // continue
+#define KW_BREAK // break
+
+
 /******************************************************/
 /* main driver */
 int main()
